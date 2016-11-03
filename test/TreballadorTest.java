@@ -5,7 +5,6 @@
  */
 
 import m5uf2a2.CostPersonal;
-import m5uf2a2.Treballador;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,19 +16,23 @@ import static org.junit.Assert.*;
  * @author Jaume
  */
 public class TreballadorTest {
+
     CostPersonal cp;
-    Treballador tr;
+
+    
+            
+
     public TreballadorTest() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -37,14 +40,22 @@ public class TreballadorTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-     @Test
+    @Test
     public void hello() {
-      
+
         System.out.println("cp");
-        String treballador=  tr.getTipusTreballador();
-        double expResult = 0;
-        double result = cp.costDelPersonal(treballadors);
+        
+        float expResult = 4300;
+        float result = cp.getCostFinal();
         assertEquals(expResult, result, 0.0);
+
+    }
+    
+    @Test
+    public void testCalcularCostFinal() {
+        
+        System.out.println("test1");
+        
         
     }
 }
