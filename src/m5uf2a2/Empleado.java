@@ -9,10 +9,13 @@ package m5uf2a2;
  *
  * @author ALUMNEDAM
  */
-public class Subdirector extends Treballador {
+public class Empleado extends Treballador {
 
-    public Subdirector(int Edad, String TipusTreballador, String Nombre, float Nomina) {
+    private int HoresExtres;
+
+    public Empleado(int HoresExtres, int Edad, String TipusTreballador, String Nombre, float Nomina) {
         super(Edad, TipusTreballador, Nombre, Nomina);
+        this.HoresExtres = HoresExtres;
     }
 
 }

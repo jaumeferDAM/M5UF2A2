@@ -10,40 +10,40 @@ package m5uf2a2;
  * @author ALUMNEDAM
  */
 public abstract class Treballador {
-    static String DIRECTOR;
-    static String SUBDIRECTOR;
+
+    private int Edad;
     private String TipusTreballador;
     private int HoresExtres;
 
-    public void setTipusTreballador(String TipusTreballador) {
-        this.TipusTreballador = TipusTreballador;
+    public int getHoresExtres() {
+        return HoresExtres;
     }
 
     public void setHoresExtres(int HoresExtres) {
         this.HoresExtres = HoresExtres;
     }
 
-    public String getTipusTreballador() {
-        return TipusTreballador;
-    }
-
-    public int getHoresExtres() {
-        return HoresExtres;
-    }
-  private String Nombre;
-  private float Nomina;
-
-    public Treballador() {
+    public Treballador(int Edad, String TipusTreballador, String Nombre, float Nomina) {
+        this.Edad = Edad;
+        this.TipusTreballador = TipusTreballador;
         this.Nombre = Nombre;
         this.Nomina = Nomina;
     }
 
-    public static String getDIRECTOR() {
-        return DIRECTOR;
+    public void setTipusTreballador(String TipusTreballador) {
+        this.TipusTreballador = TipusTreballador;
     }
 
-    public static String getSUBDIRECTOR() {
-        return SUBDIRECTOR;
+    public String getTipusTreballador() {
+        return TipusTreballador;
+    }
+
+    private String Nombre;
+    private float Nomina;
+
+    public Treballador() {
+        this.Nombre = Nombre;
+        this.Nomina = Nomina;
     }
 
     public String getNombre() {
@@ -54,14 +54,6 @@ public abstract class Treballador {
         return Nomina;
     }
 
-    public static void setDIRECTOR(String DIRECTOR) {
-        Treballador.DIRECTOR = DIRECTOR;
-    }
-
-    public static void setSUBDIRECTOR(String SUBDIRECTOR) {
-        Treballador.SUBDIRECTOR = SUBDIRECTOR;
-    }
-
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
@@ -69,6 +61,13 @@ public abstract class Treballador {
     public void setNomina(float Nomina) {
         this.Nomina = Nomina;
     }
-  
-  
+
+    public int getEdad() {
+        return Edad;
+    }
+
+    public void setEdad(int Edad) {
+        this.Edad = Edad;
+    }
+
 }

@@ -11,7 +11,7 @@ package m5uf2a2;
  */
 public class Director extends Treballador {
 
-    public Director(String Nombre, float Nomina) {
-        super();
+    public Director(int Edad, String TipusTreballador, String Nombre, float Nomina) {
+        super(Edad, TipusTreballador, Nombre, Nomina);
     }
 }

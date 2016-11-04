@@ -5,28 +5,43 @@
  */
 package m5uf2a2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author ALUMNEDAM
  */
+public class CostPersonal extends Treballador {
 
-public class CostPersonal extends Treballador{
+    static Treballador treballador = new Treballador() {
+    };
+    static float costFinal = 0;
 
-	static float CostDelPersonal(Treballador treballadors[]) {
-		float costFinal = 0;
-		Treballador treballador;
-		
-		for (int i = 0; i < treballadors.length; i++) {
-			treballador = treballadors[i];
-			
-			if (treballador.getTipusTreballador() == Treballador.DIRECTOR || 
-			treballador.getTipusTreballador() == Treballador.SUBDIRECTOR) {
-				costFinal = costFinal + treballador.getNomina();
-			} else {
-				costFinal = costFinal + treballador.getNomina() + 
-					(treballador.getHoresExtres() * 20);
-			}
-		}
-		return costFinal;
-	}
+    /*
+    * Metode per calcular el cost final de treballadors
+     */
+    static float CostDelPersonal(ArrayList<Treballador> treballadors) {
+
+        for (int i = 0; i < treballadors.size(); i++) {
+            treballador = treballadors.get(i);
+            //Cas que no sigui ni director ni subdirector suma les hores extres
+            if ("DIRECTOR".equals(treballador.getTipusTreballador())
+                    || "SUBDIRECTOR".equals(treballador.getTipusTreballador())) {
+                costFinal = costFinal + treballador.getNomina();
+            } else {
+                calcularCostFinal();
+            }
+        }
+        return costFinal;
+    }
+
+    public static float getCostFinal() {
+        return costFinal;
+    }
+
+    public static float calcularCostFinal() {
+        costFinal += treballador.getNomina() + (treballador.getHoresExtres() * 20);
+        return costFinal;
+    }
+
 }
